@@ -16,7 +16,30 @@ layout: default
 	<img src="{{ home.image }}" class="w-full h-full absolute inset-0 object-cover opacity-70" />
 </div>
 
-{% for post in collections.blogs | reverse | limit(1) %}
+<div class="grid grid-cols-1 md:grid-cols-2">
+    {# Image Column (left on desktop) #}
+    <div class="bg-white p-12 md:p-24 flex justify-end items-center">
+        <img src="{{ home.profile_image }}" class="w-full max-w-md rounded-full" alt="Tu Foto" />
+    </div>
+    {# Data to change: home.yaml -> profile_image: "/ruta-a-tu-foto.jpg" #}
+
+    {# Content Column (right on desktop) #}
+    <div class="bg-gray-100 p-12 md:p-24 flex justify-start items-center">
+        <div class="max-w-md">
+            <div class="w-24 h-2 bg-yellow-800 mb-4"></div>
+            <h2 class="font-display font-bold text-2xl md:text-3xl lg:text-4xl mb-6">Mi Experiencia Profesional</h2>
+            {# This title is hardcoded here, can be moved to data if desired #}
+            <ul class="list-disc pl-5 font-light text-gray-600 text-sm md:text-base mb-6 leading-relaxed">
+                {% for item in home.professional_experience %}
+                    <li class="mb-2">{{ item }}</li>
+                {% endfor %}
+            </ul>
+            {# Data to change: home.yaml -> professional_experience: [ "Experiencia 1", "Experiencia 2", ... ] #}
+        </div>
+    </div>
+</div>
+
+<!-- {% for post in collections.blogs | reverse | limit(1) %}
 	<div class="grid grid-cols-1 md:grid-cols-2">
 
 		<div class="bg-white p-12 md:p-24 flex justify-end items-center">
@@ -35,19 +58,67 @@ layout: default
 		</div>
 
 	</div>
-{% endfor %}
+{% endfor %} -->
 
 {% if home.full_screen_image %}
 <img src="{{ home.full_screen_image }}" class="w-full h-screen object-cover" />
 {% endif %}
 
-{% if home.cta_title %}
+{% if home.youtube_videos and home.youtube_videos.length > 0 %}
+    <div class="bg-gray-100 py-16 md:py-24">
+        <div class="container mx-auto px-4 text-center mb-12">
+            <h2 class="font-display font-bold text-4xl lg:text-5xl text-gray-800 mb-4">Mi Canal de YouTube</h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">Descubre mis últimas composiciones, arreglos y lecciones musicales.</p>
+        </div>
+
+        {# Contenedor principal del carrusel con desplazamiento #}
+        {# Hemos eliminado el x-data de Alpine.js y los botones #}
+        <div class="overflow-x-auto pb-6"> {# Eliminado -mb-6 y scrollbar-hide para hacer la barra visible #}
+            <div class="flex flex-nowrap space-x-6 px-4 md:px-8 lg:px-16 xl:px-24">
+                {% for video in home.youtube_videos %}
+                    <div class="flex-shrink-0
+                                w-full                             {# En pantallas muy pequeñas, 1 video por vista #}
+                                sm:w-[calc(50%-12px)]             {# En pantallas pequeñas (sm), 2 videos por vista #}
+                                lg:w-[calc(33.3333%-16px)]        {# En pantallas grandes (lg), 3 videos por vista #}
+                                bg-white rounded-lg shadow-xl overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl border border-gray-200">
+                        <div class="relative w-full" style="padding-top: 56.25%;"> {# Aspect ratio for 16:9 videos #}
+                            <iframe
+                                class="absolute inset-0 w-full h-full"
+                                src="https://www.youtube.com/watch?v=b3R7Ca1saJI{{ video.youtube_id }}"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-display font-semibold text-lg text-gray-900 mb-2 leading-tight">{{ video.title }}</h3>
+                            <p class="text-gray-700 text-sm line-clamp-2">{{ video.description }}</p>
+                            <a href="https://youtube.com/watch?v={{ video.youtube_id }}" target="_blank" rel="noopener noreferrer"
+                               class="inline-block mt-4 text-sm font-heading uppercase tracking-wider text-yellow-800 hover:text-yellow-900 transition duration-150 ease-in-out">
+                                Ver en YouTube →
+                            </a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        {# Botón "Visita mi Canal Completo" #}
+        <div class="text-center mt-12">
+            <a href="https://www.youtube.com/@eduardomanzanilla7987" target="_blank" rel="noopener noreferrer"
+               class="inline-block bg-yellow-800 text-white font-heading uppercase text-sm tracking-wider px-8 py-4 rounded-full shadow-lg hover:bg-yellow-700 transition duration-200 ease-in-out">
+                Visita mi Canal Completo
+            </a>
+        </div>
+    </div>
+{% endif %}
+
+<!-- {% if home.cta_title %}
 <div class="max-w-xl mx-auto text-center py-24 md:py-32">
 	<div class="w-24 h-2 bg-yellow-800 mb-4 mx-auto"></div>
 	<h2 class="font-display font-bold text-3xl md:text-4xl lg:text-5xl mb-6">{{ home.cta_title }}</h2>
 	<p class="font-light text-gray-600 mb-6 leading-relaxed">{{ home.cta_description }}</p>
 </div>
-{% endif %}
+{% endif %} -->
 
 <div class="flex flex-wrap bg-black">
 	{% for category in collections.category | reverse | limit(3) %}
@@ -92,3 +163,4 @@ layout: default
 	<img src="{{ home.footer_cta_image }}" class="w-full h-full absolute inset-0 object-cover" />
 </div>
 {% endif %}
+

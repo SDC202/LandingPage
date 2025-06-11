@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.overflow-x-auto {
+    /* Asegura que el contenedor tenga una barra de desplazamiento */
+    overflow-x: auto;
+}
+
+.overflow-x-auto::-webkit-scrollbar {
+    height: 12px; /* Grosor de la barra de desplazamiento horizontal */
+}
+
+.overflow-x-auto::-webkit-scrollbar-track {
+    background: #f0f0f0; /* Color del fondo de la barra (el "riel") */
+    border-radius: 6px; /* Bordes redondeados para el riel */
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb {
+    background: #b45309; /* Color de la barra de desplazamiento (el "pulgar") - esto es yellow-800 */
+    border-radius: 6px; /* Bordes redondeados para el pulgar */
+    border: 2px solid #f0f0f0; /* Espaciado alrededor del pulgar */
+}
+
+/* Para Firefox (soporte limitado) */
+.overflow-x-auto {
+    scrollbar-width: thin; /* 'auto' o 'thin' */
+    scrollbar-color: #b45309 #f0f0f0; /* color-pulgar color-riel */
+}
