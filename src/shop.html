@@ -5,8 +5,8 @@ title: Tienda de Música - Composiciones y Arreglos
 
 <div class="container mx-auto px-4 py-12 md:py-16 lg:py-20">
     <header class="text-center mb-12">
-        <h1 class="text-5xl font-display font-bold text-gray-800 mb-4">Nuestras Creaciones Musicales</h1>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto">Explora nuestro catálogo de composiciones originales, arreglos personalizados y adaptaciones para músicos de todos los niveles e instrumentos.</p>
+        <h1 class="text-5xl font-display font-bold text-gray-800 mb-4">{{ shop_content.main_title }}</h1>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">{{ shop_content.main_description }}</p>
     </header>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -36,7 +36,7 @@ title: Tienda de Música - Composiciones y Arreglos
 
     {% if collections.products.length == 0 %}
         <div class="text-center py-16">
-            <p class="text-gray-600 text-xl">¡Aún no hay productos en la tienda! Vuelve pronto.</p>
+            <p class="text-gray-600 text-xl">{{ shop_content.no_products_message }}</p>
         </div>
     {% endif %}
 

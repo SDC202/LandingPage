@@ -1,0 +1,96 @@
+---
+layout: default
+title: Solicitud de Arreglos Musicales
+---
+
+<div class="container mx-auto px-4 py-12 md:py-16 lg:py-20">
+    <header class="text-center mb-12">
+        <h1 class="text-5xl font-display font-bold text-gray-800 mb-4">{{ arrangements_content.page_title }}</h1>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">{{ arrangements_content.page_description }}</p>
+    </header>
+
+    <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-xl p-8 md:p-10 border border-gray-200">
+        <form action="#" method="POST" class="space-y-6">
+            <div>
+                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">{{ arrangements_content.form_name_label }}</label>
+                <input type="text" name="name" id="name" autocomplete="name" required
+                       class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500 sm:text-base transition duration-150 ease-in-out">
+            </div>
+
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">{{ arrangements_content.form_email_label }}</label>
+                <input type="email" name="email" id="email" autocomplete="email" required
+                       class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500 sm:text-base transition duration-150 ease-in-out">
+            </div>
+
+            <div>
+                <label for="song-title" class="block text-sm font-medium text-gray-700 mb-2">{{ arrangements_content.form_song_title_label }}</label>
+                <input type="text" name="song-title" id="song-title" required
+                       class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500 sm:text-base transition duration-150 ease-in-out">
+            </div>
+
+            <div>
+                <label for="artist" class="block text-sm font-medium text-gray-700 mb-2">{{ arrangements_content.form_artist_label }}</label>
+                <input type="text" name="artist" id="artist"
+                       class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500 sm:text-base transition duration-150 ease-in-out">
+            </div>
+
+            <div>
+                <label for="instrumentation" class="block text-sm font-medium text-gray-700 mb-2">{{ arrangements_content.form_instrumentation_label }}</label>
+                <textarea id="instrumentation" name="instrumentation" rows="3" required
+                          placeholder="{{ arrangements_content.form_instrumentation_placeholder }}"
+                          class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500 sm:text-base transition duration-150 ease-in-out"></textarea>
+            </div>
+
+            <div>
+                <label for="style" class="block text-sm font-medium text-gray-700 mb-2">{{ arrangements_content.form_style_label }}</label>
+                <input type="text" name="style" id="style"
+                       placeholder="{{ arrangements_content.form_style_placeholder }}"
+                       class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500 sm:text-base transition duration-150 ease-in-out">
+            </div>
+
+            <div>
+                <label for="mood" class="block text-sm font-medium text-gray-700 mb-2">{{ arrangements_content.form_mood_label }}</label>
+                <input type="text" name="mood" id="mood"
+                       placeholder="{{ arrangements_content.form_mood_placeholder }}"
+                       class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500 sm:text-base transition duration-150 ease-in-out">
+            </div>
+
+            <div>
+                <label for="duration" class="block text-sm font-medium text-gray-700 mb-2">{{ arrangements_content.form_duration_label }}</label>
+                <input type="number" name="duration" id="duration" min="1" step="any"
+                       class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500 sm:text-base transition duration-150 ease-in-out">
+            </div>
+
+            <div>
+                <label for="audio-link" class="block text-sm font-medium text-gray-700 mb-2">{{ arrangements_content.form_audio_link_label }}</label>
+                <input type="url" name="audio-link" id="audio-link"
+                       placeholder="https://youtube.com/watch?v=..."
+                       class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500 sm:text-base transition duration-150 ease-in-out">
+            </div>
+
+            <div>
+                <label for="deadline" class="block text-sm font-medium text-gray-700 mb-2">{{ arrangements_content.form_deadline_label }}</label>
+                <input type="date" name="deadline" id="deadline"
+                       class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500 sm:text-base transition duration-150 ease-in-out">
+            </div>
+
+            <div>
+                <label for="notes" class="block text-sm font-medium text-gray-700 mb-2">{{ arrangements_content.form_notes_label }}</label>
+                <textarea id="notes" name="notes" rows="5"
+                          class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500 sm:text-base transition duration-150 ease-in-out"></textarea>
+            </div>
+
+            <div class="pt-4">
+                <button type="submit"
+                        class="w-full bg-yellow-800 text-white font-heading uppercase text-lg tracking-wider px-8 py-4 rounded-md shadow-lg hover:bg-yellow-700 transition duration-200 ease-in-out">
+                    {{ arrangements_content.form_submit_button }}
+                </button>
+            </div>
+
+            <div class="mt-8 text-center text-gray-600 text-sm italic">
+                <p>{{ arrangements_content.form_disclaimer }}</p>
+            </div>
+        </form>
+    </div>
+</div>

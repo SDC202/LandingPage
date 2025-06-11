@@ -5,7 +5,8 @@ description: "Una pieza original para piano y flauta travesera, ideal para conci
 price: 75.00
 category: Composición
 tags: ["products"] 
-layout: product_single # Opcional: si quieres una página detallada para cada producto (ver siguiente punto)
+layout: product_single 
+permalink: "/shop/{{ title | slug }}/index.html" # <--- Add this line for the URL
 ---
 ## Detalles de la Composición
 
