@@ -26,7 +26,7 @@ title: Tienda de Música - Composiciones y Arreglos
                     <h2 class="font-display font-semibold text-2xl text-gray-900 mb-3 leading-tight">{{ product.data.title }}</h2>
                     <p class="text-gray-700 text-base mb-4 line-clamp-3">{{ product.data.description }}</p>
                     <div class="flex items-center justify-between mt-4">
-                        <span class="text-3xl font-display font-bold text-yellow-800">${{ product.data.price | floatformat(2) }}</span>
+                        <span class="text-3xl font-display font-bold text-yellow-800">${{ product.data.price }}</span>
                         <a href="{{ product.url }}" class="bg-yellow-800 text-white font-heading uppercase text-sm tracking-wider px-6 py-3 rounded-full shadow-lg hover:bg-yellow-700 transition duration-200 ease-in-out">Ver Detalles</a>
                     </div>
                 </div>
