@@ -1,95 +1,119 @@
-# Impulse - A Novolio Template for Netlify
+# Eduardo Manzanilla - Sitio Web Oficial
 
-Built using Netlify CMS, Eleventy, Alphine JS & Tailwind CSS
+Este es el repositorio oficial del sitio web personal y profesional para Eduardo Manzanilla, diseñado para showcasing sus obras, servicios y mantenerse en contacto con su audiencia.
 
-Perfect for blogging websites, Impulse Netlify comes with everything you need to get started with NetlifyCMS support.
+## 🚀 Características Principales
 
-## Live Demo
+Este sitio web estático está construido para ser rápido, seguro y fácil de mantener, ofreciendo las siguientes funcionalidades clave:
 
-[https://novolio-impulse.netlify.app/](https://novolio-impulse.netlify.app/)
+* **Página de Inicio Dinámica (`/`):**
+    * **Sección Hero:** Título personalizable, imagen de fondo y enlaces clave.
+    * **Sección "Sobre Mí":** Foto de perfil y listado de experiencia profesional.
+    * **Carrusel de YouTube:** Muestra una selección de videos del canal de YouTube del músico, con desplazamiento lateral y enlaces directos a los videos.
+    * **Promoción de la Tienda:** Destaca productos clave de la tienda con un llamado a la acción claro.
+    * **Novedades y Anuncios:** Muestra las últimas noticias y eventos, con enlaces a la página completa de Novedades.
+    * **Footer:** Información de contacto y enlaces a redes sociales.
 
-## Quick Install
+* **Tienda de Música (`/shop/`):**
+    * Catálogo de composiciones originales, arreglos y adaptaciones.
+    * Listado de productos con imagen, título, descripción, precio y enlace a detalles.
+    * Páginas de detalle individuales para cada producto.
+    * Organizado por **categorías de productos** (ej. Composición, Arreglo, Educación) que se pueden explorar desde la página de inicio.
 
-<a href="https://app.netlify.com/start/deploy?repository=https://github.com/rosstopping/impulse-netlify&amp;stack=cms"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" /></a>
+* **Formulario de Solicitud de Arreglos (`/arreglos/`):**
+    * Página dedicada para que los clientes soliciten arreglos musicales personalizados.
+    * Formulario detallado para recopilar toda la información necesaria para una cotización (instrumentación, estilo, referencias, etc.).
+    * *Nota: Este es un formulario de frontend. Para procesar las solicitudes, se requiere una integración de backend (ej. Netlify Forms, Formspree, etc.) que se configuraría en el despliegue.*
 
+* **Sección de Novedades (`/novedades/`):**
+    * Página de listado de noticias con los artículos más recientes.
+    * Formato de lista/blog con imagen a un lado y texto completo al otro (si no hay imagen, el espacio se adapta).
+    * Páginas de detalle individuales para cada noticia.
 
-| ![image](https://novolio.dev/images/themes/impulse/preview.png) |
-| ------------------------------------------------------------------------------------------------------------- |
+* **Diseño Responsivo:** Adaptable a diferentes tamaños de pantalla (móviles, tabletas, escritorios).
+* **Contenido Gestionable:** La mayoría del contenido es fácilmente editable a través de archivos de datos `.yaml` y `.md`.
 
-## Using template on Netlify
+## 🛠️ Tecnologías Utilizadas
 
-Prefer to watch a quick tutorial? [Watch video](https://www.youtube.com/watch?v=b3R7Ca1saJI)
+* **Eleventy (11ty):** Un generador de sitios estáticos minimalista y flexible.
+* **Nunjucks:** Un potente motor de plantillas para la lógica de los archivos HTML.
+* **Tailwind CSS:** Un framework CSS "utility-first" para un desarrollo de interfaz rápido y modular.
+* **Alpine.js:** Una librería JavaScript ligera para la interactividad de componentes (ej. carrusel de videos).
+* **Node.js & npm:** Entorno de ejecución y gestor de paquetes.
+* **PostCSS:** Para procesar y optimizar el CSS de Tailwind.
 
-### 1\. Setup a new git repository
+## 🚀 Configuración y Desarrollo Local
 
-```
-git init
-git add .
-git commit -m "init"
-git remote add origin https://github.com/<username>/<reponame>.git
-git branch -M main
-git push -u origin main
-```
+Para poner el sitio en marcha en tu máquina local o entorno de desarrollo (como GitHub Codespaces):
 
-### 2\. Login with Netlify and connect your new repository
+### Prerrequisitos
 
-Navigate to [netlify.com](https://netlify.com) and login or create a new account. Click 'new site from git', connect your github account and select your newly created repo.
+Asegúrate de tener [Node.js](https://nodejs.org/en/download/) (que incluye `npm`) instalado en tu sistema.
 
-### 3\. Enable Netlify Identity
+### Pasos de Instalación
 
-Go to the Identify section to enable. Then make sure to enable 'Git Gateway'. We recommend disabling registration otherwise you leave your CMS open to anyone. 
+1.  **Clona este repositorio** (o asegúrate de tener todos los archivos si los pegaste directamente):
+    ```bash
+    git clone [https://github.com/tu-usuario/nombre-de-tu-repo.git](https://github.com/tu-usuario/nombre-de-tu-repo.git)
+    cd nombre-de-tu-repo
+    ```
+2.  **Instala las dependencias del proyecto:**
+    ```bash
+    npm install
+    ```
+    *Si encuentras errores de dependencia (`ERESOLVE`), puede que necesites actualizar algunas librerías o forzar la instalación. Se han realizado actualizaciones a Tailwind CSS v3 y librerías compatibles.*
+3.  **Construye el proyecto (una vez inicial):**
+    ```bash
+    npm run build
+    ```
+    *Esto generará el CSS inicial y la estructura del sitio.*
+4.  **Inicia el servidor de desarrollo:**
+    ```bash
+    npm run start
+    ```
+    *Esto construirá el sitio, iniciará un servidor local (normalmente en `http://localhost:8080`), y vigilará los cambios en los archivos para refrescar automáticamente el navegador.*
 
-![image](https://novolio.dev/images/git-gateway.png)
+## ✍️ Gestión de Contenido
 
-### 4\. Email Templates
-All of our themes come with custom email templates for use with Netlify. To enable these go to the Identity > Emails section and enter the following paths for each template.
+La mayoría del contenido del sitio se gestiona a través de archivos de datos (`.yaml` y `.md`) en la carpeta `src/`.
 
-#### Invitation template
-``` /email-templates/invitation.html ```
+* **Página de Inicio (`/index.html`):**
+    * **Contenido principal (títulos, descripciones, enlaces, imágenes):** Edita `src/_data/home.yaml`.
+    * **Videos de YouTube del carrusel:** Añade o modifica los `youtube_videos` en `src/_data/home.yaml` con los `youtube_id` de tus videos.
+    * **Tu foto y experiencia:** `profile_image` y `professional_experience` en `src/_data/home.yaml`.
 
-#### Confirmation template
-``` /email-templates/confirmation.html ```
+* **Tienda de Música (`/shop/`):**
+    * **Página principal de la tienda (`/shop/`):** La configuración está en `src/shop/shop.json`.
+    * **Productos individuales:** Cada producto es un archivo Markdown (`.md`) dentro de `src/shop/`. Edita su "front matter" (título, descripción, imagen, precio, categoría) y el contenido del cuerpo.
+        * **¡Importante!** Asegúrate de que cada producto `.md` tenga `tags: ["products"]` en su front matter.
+    * **Imágenes de Productos:** Coloca las imágenes en `src/static/images/` y usa la ruta `/static/images/nombre-imagen.jpg` en el campo `image:` del producto.
 
-#### Recovery template
-``` /email-templates/recovery.html ```
+* **Categorías de Productos:**
+    * **Definición de categorías:** Crea archivos Markdown (`.md`) para cada categoría (ej. `src/categories/composicion.md`) con su `title` y `description`.
+    * **Imágenes de Categoría:** Si quieres que las categorías tengan imágenes en la página de inicio, coloca imágenes con el nombre `category-[nombre-slug].jpg` (ej. `category-composicion.jpg`) en `src/static/images/`.
 
-#### Email change template
-``` /email-templates/email-change.html ```
+* **Novedades (`/novedades/`):**
+    * **Página principal de novedades (`/novedades/`):** La configuración está en `src/news/news.json`.
+    * **Noticias individuales:** Cada noticia es un archivo Markdown (`.md`) dentro de `src/news/`. Edita su "front matter" (título, descripción, fecha, imagen) y el contenido del cuerpo.
+        * **¡Importante!** Asegúrate de que cada noticia `.md` tenga `tags: ["news"]` en su front matter.
+    * **Imágenes de Noticias:** Coloca las imágenes en `src/static/images/` y usa la ruta `/static/images/nombre-imagen.jpg` en el campo `image:` de la noticia.
 
-## Development
+* **Configuración General del Sitio:**
+    * **Nombre del sitio, logo:** `src/_data/settings.yaml`.
+    * **Elementos de navegación (menú):** `src/_data/navigation.yaml`.
 
-### 1\. Clone this Repository
+## ⚙️ Personalización Avanzada
 
-```
-git clone https://github.com/rosstopping/impulse-netlify.git
-```
+* **Estilos CSS:** Modifica o extiende las clases de Tailwind CSS directamente en los archivos HTML o Markdown. Para estilos personalizados más complejos, puedes editar `src/static/css/tailwind.css`.
+* **Funcionalidades de Eleventy:** `eleventy.js` es el archivo de configuración principal de Eleventy, donde se definen colecciones, filtros, etc.
+* **JavaScript (Alpine.js):** Para añadir interactividad a los componentes, consulta la documentación de Alpine.js y edita directamente en el HTML.
 
-### 2\. Navigate to the directory
+## 🚀 Despliegue
 
-```
-cd impulse-netlify
-```
+Este sitio web es estático y puede desplegarse en cualquier servicio de hosting de sitios estáticos (Netlify, Vercel, GitHub Pages, Firebase Hosting, etc.). La configuración del proyecto está optimizada para [Netlify](https://www.netlify.com/), como se especifica en `netlify.toml`.
 
-### 3\. Install dependencies
+---
 
-```
-npm install
-```
+**¡Disfruta creando y compartiendo tu música con el mundo!**
 
-### 4\. Build the project to generate the first CSS
-
-This step is only required the very first time.
-
-```
-npm run build
-```
-
-### 5\. Run Eleventy
-
-```
-npm run start
-```
-
-## Author
-
-Novolio [@novolio_dev](https://novolio.dev/)
+---
