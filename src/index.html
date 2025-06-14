@@ -64,6 +64,60 @@ layout: default
 <img src="{{ home.full_screen_image }}" class="w-full h-screen object-cover" />
 {% endif %}
 
+<div class="bg-white py-16 md:py-24">
+    <div class="container mx-auto px-4 text-center mb-12">
+        <h2 class="font-display font-bold text-4xl lg:text-5xl text-gray-800 mb-4">{{ shop_promo.shop_promo_title }}</h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-10">{{ shop_promo.shop_promo_description }}</p>
+        <a href="{{ shop_promo.shop_promo_button_link }}"
+           class="inline-block bg-yellow-800 text-white font-heading uppercase text-sm tracking-wider px-8 py-4 rounded-full shadow-lg hover:bg-yellow-700 transition duration-200 ease-in-out">
+            {{ shop_promo.shop_promo_button_text }}
+        </a>
+    </div>
+
+    {# Muestra los primeros 3 productos de la colección 'products' #}
+    <div class="container mx-auto px-4 mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {% for product in collections.products | limit(3) %}
+            <div class="bg-white rounded-lg shadow-xl overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl border border-gray-200">
+                <a href="{{ product.url }}">
+                    {% if product.data.image %}
+                        <img src="{{ product.data.image }}" alt="{{ product.data.title }}" class="w-full h-56 object-cover object-center">
+                    {% else %}
+                        <div class="w-full h-56 bg-gray-200 flex items-center justify-center text-gray-500">
+                            <svg class="w-24 h-24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9v-2h2v2zm0-4H9V7h2v6zm5-2h-2V7h2v6zm0 4h-2v-2h2v2z"/></svg>
+                        </div>
+                    {% endif %}
+                </a>
+                <div class="p-6">
+                    <span class="text-xs font-heading uppercase tracking-wider text-yellow-700 mb-2 block">{{ product.data.category }}</span>
+                    <h3 class="font-display font-semibold text-xl text-gray-900 mb-2 leading-tight">{{ product.data.title }}</h3>
+                    <p class="text-gray-700 text-sm line-clamp-2">{{ product.data.description }}</p>
+                    <div class="flex items-center justify-between mt-4">
+                        <span class="text-2xl font-display font-bold text-yellow-800">${{ product.data.price }}</span>
+                        <a href="{{ product.url }}" class="bg-yellow-800 text-white font-heading uppercase text-xs tracking-wider px-4 py-2 rounded-full shadow-lg hover:bg-yellow-700 transition duration-200 ease-in-out">Ver Producto</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- {% if home.cta_title %}
+<div class="max-w-xl mx-auto text-center py-24 md:py-32">
+	<div class="w-24 h-2 bg-yellow-800 mb-4 mx-auto"></div>
+	<h2 class="font-display font-bold text-3xl md:text-4xl lg:text-5xl mb-6">{{ home.cta_title }}</h2>
+	<p class="font-light text-gray-600 mb-6 leading-relaxed">{{ home.cta_description }}</p>
+</div>
+{% endif %} -->
+
+<div class="flex flex-wrap bg-black">
+	{% for category in collections.category | reverse | limit(3) %}
+		<a href="{{ category.url }}" class="bg-black relative w-full md:w-auto md:flex-1 flex items-center justify-center h-72 font-heading text-white uppercase tracking-widest hover:opacity-75">
+			<div class="relative z-10">{{ category.data.title }}</div>
+			<img src="{{ category.data.image }}" class="absolute inset-0 w-full h-full object-cover opacity-50" />
+		</a>
+	{% endfor %}
+</div>
+
 {% if home.youtube_videos and home.youtube_videos.length > 0 %}
     <div class="bg-gray-100 py-16 md:py-24">
         <div class="container mx-auto px-4 text-center mb-12">
@@ -84,7 +138,7 @@ layout: default
                         <div class="relative w-full" style="padding-top: 56.25%;"> {# Aspect ratio for 16:9 videos #}
                             <iframe
                                 class="absolute inset-0 w-full h-full"
-                                src="https://www.youtube.com/watch?v=b3R7Ca1saJI{{ video.youtube_id }}"
+                                src="https://www.youtube.com/embed/{{ video.youtube_id }}"
                                 frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen
@@ -112,26 +166,7 @@ layout: default
     </div>
 {% endif %}
 
-<!-- {% if home.cta_title %}
-<div class="max-w-xl mx-auto text-center py-24 md:py-32">
-	<div class="w-24 h-2 bg-yellow-800 mb-4 mx-auto"></div>
-	<h2 class="font-display font-bold text-3xl md:text-4xl lg:text-5xl mb-6">{{ home.cta_title }}</h2>
-	<p class="font-light text-gray-600 mb-6 leading-relaxed">{{ home.cta_description }}</p>
-</div>
-{% endif %} -->
-
-<div class="flex flex-wrap bg-black">
-	{% for category in collections.category | reverse | limit(3) %}
-		<a href="{{ category.url }}" class="bg-black relative w-full md:w-auto md:flex-1 flex items-center justify-center h-72 font-heading text-white uppercase tracking-widest hover:opacity-75">
-			<div class="relative z-10">{{ category.data.title }}</div>
-			<img src="{{ category.data.image }}" class="absolute inset-0 w-full h-full object-cover opacity-50" />
-		</a>
-	{% endfor %}
-</div>
-
-
-
-{% for post in collections.blogs | reverse | limit(1, 1) %}
+<!-- {% for post in collections.blogs | reverse | limit(1, 1) %}
 	<div class="grid grid-cols-1 md:grid-cols-2">
 
 		<div class="bg-white p-12 md:p-24 flex justify-start items-center">
@@ -150,7 +185,7 @@ layout: default
 		</div>
 
 	</div>
-{% endfor %}
+{% endfor %} -->
 
 {% if home.footer_cta_image %}
 <div class="relative w-full py-12 px-12">
@@ -162,5 +197,42 @@ layout: default
 
 	<img src="{{ home.footer_cta_image }}" class="w-full h-full absolute inset-0 object-cover" />
 </div>
+{% endif %}
+
+{% if collections.news and collections.news.length > 0 %}
+    <div class="bg-gray-100 py-16 md:py-24">
+        <div class="container mx-auto px-4 text-center mb-12">
+            <h2 class="font-display font-bold text-4xl lg:text-5xl text-gray-800 mb-4">Últimas Novedades</h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">Mantente informado sobre mis últimos proyectos y anuncios.</p>
+        </div>
+
+        <div class="container mx-auto px-4 mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for news_item in collections.news | reverse | limit(3) %} {# Muestra las 3 noticias más recientes #}
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl border border-gray-200">
+                    <a href="{{ news_item.url }}">
+                        {% if news_item.data.image %}
+                            <a href="{{ news_item.url }}">
+                                <img src="{{ news_item.data.image }}" alt="{{ news_item.data.title }}" class="w-full h-56 object-cover object-center">
+                            </a>
+                        {% endif %}
+                    </a>
+                    <div class="p-6">
+                        <span class="text-xs font-heading uppercase tracking-wider text-gray-600 mb-2 block">{{ news_item.date | readableDate }}</span>
+                        <h3 class="font-display font-semibold text-xl text-gray-900 mb-2 leading-tight">{{ news_item.data.title }}</h3>
+                        <p class="text-gray-700 text-sm line-clamp-2">{{ news_item.data.description }}</p>
+                        <div class="flex items-center justify-between mt-4">
+                            <a href="{{ news_item.url }}" class="bg-yellow-800 text-white font-heading uppercase text-xs tracking-wider px-4 py-2 rounded-full shadow-lg hover:bg-yellow-700 transition duration-200 ease-in-out">Leer Más</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="text-center mt-12">
+            <a href="/news_listing"
+               class="inline-block bg-yellow-800 text-white font-heading uppercase text-sm tracking-wider px-8 py-4 rounded-full shadow-lg hover:bg-yellow-700 transition duration-200 ease-in-out">
+                Ver Todas las Novedades
+            </a>
+        </div>
+    </div>
 {% endif %}
 

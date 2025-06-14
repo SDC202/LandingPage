@@ -1,0 +1,39 @@
+---
+layout: default
+title: Novedades y Anuncios
+---
+
+<div class="container mx-auto px-4 py-12 md:py-16 lg:py-20">
+    <header class="text-center mb-12">
+        <h1 class="text-5xl font-display font-bold text-gray-800 mb-4">Últimas Novedades y Anuncios</h1>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">Mantente al día con mis últimos proyectos, conciertos y lanzamientos musicales.</p>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {% for newsItem in collections.news | reverse %}
+            <div class="bg-white rounded-lg shadow-xl overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl border border-gray-200">
+                <a href="{{ newsItem.url }}">
+                    {% if newsItem.data.image %}
+                        <a href="{{ newsItem.url }}">
+                            <img src="{{ newsItem.data.image }}" alt="{{ newsItem.data.title }}" class="w-full h-56 object-cover object-center">
+                        </a>
+                    {% endif %}
+                </a>
+                <div class="p-6">
+                    <span class="text-xs font-heading uppercase tracking-wider text-gray-600 mb-2 block">{{ newsItem.date | readableDate }}</span>
+                    <h2 class="font-display font-semibold text-2xl text-gray-900 mb-3 leading-tight">{{ newsItem.data.title }}</h2>
+                    <p class="text-gray-700 text-base mb-4 line-clamp-3">{{ newsItem.data.description }}</p>
+                    <a href="{{ newsItem.url }}" class="inline-block mt-4 text-sm font-heading uppercase tracking-wider text-yellow-800 hover:text-yellow-900 transition duration-150 ease-in-out">
+                        Leer más →
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    {% if collections.news.length == 0 %}
+        <div class="text-center py-16">
+            <p class="text-gray-600 text-xl">¡Aún no hay novedades! Vuelve pronto para las últimas noticias.</p>
+        </div>
+    {% endif %}
+</div>

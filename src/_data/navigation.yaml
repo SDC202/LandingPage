@@ -2,11 +2,15 @@
 items:
   - text: Home
     url: "/"
-  - text: About
+  - text: Sobre mí
     url: "/pages/about-us"
-  - text: Shop
+  - text: Tienda
     url: "/shop"
   - text: Solicitar Arreglo
     url: "/arrangements_request"
-  - text: Contact
+  - text: Mi Discografía
+    url: 
+  - text: Novedades
+    url: "/news_listing"
+  - text: Contacto
     url: "/contact"
