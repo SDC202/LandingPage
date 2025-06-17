@@ -2,17 +2,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
 import { getDatabase, ref, set, push, get } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-database.js";
 
-// Configuración de Firebase usando variables de entorno
-const firebaseConfig = {
-apiKey: "AIzaSyBCz1RlmB7qxNPjQ5VnSGNYTCeVcvpdT0E",
-authDomain: "landing-1316d.firebaseapp.com",
-databaseURL: "https://landing-1316d-default-rtdb.firebaseio.com",
-projectId: "landing-1316d",
-storageBucket: "landing-1316d.firebasestorage.app",
-messagingSenderId: "477606477230",
-appId: "1:477606477230:web:5d494387951929bbe51c3f"
-};
-
 // Inicializa la app de Firebase
 const app = initializeApp(firebaseConfig);
 
