@@ -36,6 +36,8 @@ async function enviarFormulario(formData) {
 }
 
 async function cargarVideos() {
+  console.log('Cargando videos desde Firebase...');
+
   try {
     const videosRef = ref(database, 'videos');
     const snapshot = await get(videosRef);
@@ -59,7 +61,7 @@ async function cargarVideos() {
 
         let videoIframe = document.createElement('iframe');
         videoIframe.classList = "absolute inset-0 w-full h-full";
-        videoIframe.src = "https://www.youtube.com/embed/" + video.youtubeId;
+        videoIframe.src = "https://www.youtube.com/embed/" + video.youtube_id;
         videoIframe.frameBorder = "0";
         videoIframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
         videoIframe.allowFullscreen = true;
@@ -80,14 +82,14 @@ async function cargarVideos() {
 
         let aDescription = document.createElement('a');
         aDescription.classList = "inline-block mt-4 text-sm font-heading uppercase tracking-wider text-yellow-800 hover:text-yellow-900 transition duration-150 ease-in-out";
-        aDescription.href = "https://www.youtube.com/watch?v=" + video.youtubeId;
+        aDescription.href = "https://www.youtube.com/watch?v=" + video.youtube_id;
         aDescription.textContent = "Ver en YouTube";
         aDescription.target = "_blank"; // Abrir en nueva pestaña
         aDescription.rel = "noopener noreferrer"; // Seguridad al abrir en nueva pestaña
 
-        divDescripcion.appendChild(h3Description);
-        divDescripcion.appendChild(pDescription);
-        divDescripcion.appendChild(aDescription);
+        divDescription.appendChild(h3Description);
+        divDescription.appendChild(pDescription);
+        divDescription.appendChild(aDescription);
 
         divMain.appendChild(divVideo);
         divMain.appendChild(divDescription);
@@ -95,6 +97,7 @@ async function cargarVideos() {
         //Añadir el contenedor princpal al contenedor de videos
         videoContainer.appendChild(divMain);
       });
+      console.log('Videos cargados correctamente:', videos);
       return videos;
     } else {
       console.log('No hay videos en la base de datos.');
