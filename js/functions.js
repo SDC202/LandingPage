@@ -1,4 +1,4 @@
-import { enviarFormulario } from './firebase.js';
+import { enviarFormulario, cargarVideos } from './firebase.js';
 
 function enableForm() {
   const form = document.getElementById('formulario_arreglo');
@@ -28,9 +28,13 @@ function enableForm() {
     if( enviarFormulario(formData) ){
       console.log('Formulario enviado correctamente');
       form.reset(); // Limpiar el formulario después de enviar
+      document.getElementById('form_response_success').classList.remove('hidden');
+      document.getElementById('form_response_failure').classList.add('hidden');
     }
     else {
       console.error('Error al enviar el formulario');
+      document.getElementById('form_response_failure').classList.remove('hidden');
+      document.getElementById('form_response_success').classList.add('hidden');
     }
     
   });
@@ -41,4 +45,5 @@ function enableForm() {
 
 (function() {
     enableForm();
+    cargarVideos();
 })();

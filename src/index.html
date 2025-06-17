@@ -128,7 +128,7 @@ layout: default
         {# Contenedor principal del carrusel con desplazamiento #}
         {# Hemos eliminado el x-data de Alpine.js y los botones #}
         <div class="overflow-x-auto pb-6"> {# Eliminado -mb-6 y scrollbar-hide para hacer la barra visible #}
-            <div class="flex flex-nowrap space-x-6 px-4 md:px-8 lg:px-16 xl:px-24">
+            <div id = "video_container" class="flex flex-nowrap space-x-6 px-4 md:px-8 lg:px-16 xl:px-24">
                 {% for video in home.youtube_videos %}
                     <div class="flex-shrink-0
                                 w-full                             {# En pantallas muy pequeñas, 1 video por vista #}
