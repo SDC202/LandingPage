@@ -54,7 +54,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/favicon.ico");
 
   // Copia la carpeta js a _site/js
-  eleventyConfig.addPassthroughCopy("src/js");
+  eleventyConfig.addPassthroughCopy("js");
 
   // Minify HTML
   eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
