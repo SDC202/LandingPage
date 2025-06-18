@@ -8,8 +8,6 @@ items:
     url: "/shop"
   - text: Solicitar Arreglo
     url: "/arrangements_request"
-  - text: Mi Discografía
-    url: 
   - text: Novedades
     url: "/news_listing"
   - text: Contacto
