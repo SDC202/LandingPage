@@ -21,7 +21,6 @@ layout: default
     <div class="bg-white p-12 md:p-24 flex justify-end items-center">
         <img src="{{ home.profile_image }}" class="w-full max-w-md rounded-full" alt="Tu Foto" />
     </div>
-    {# Data to change: home.yaml -> profile_image: "/ruta-a-tu-foto.jpg" #}
 
     {# Content Column (right on desktop) #}
     <div class="bg-gray-100 p-12 md:p-24 flex justify-start items-center">
@@ -33,13 +32,12 @@ layout: default
                     <li class="mb-2">{{ item }}</li>
                 {% endfor %}
             </ul>
-            {# Data to change: home.yaml -> professional_experience: [ "Experiencia 1", "Experiencia 2", ... ] #}
         </div>
     </div>
 </div>
 
 {% if home.full_screen_image %}
-<img src="{{ home.full_screen_image }}" class="w-full h-960 object-cover" />
+<img src="{{ home.full_screen_image }}" class="w-full h-[50vh] object-cover" />
 {% endif %}
 
 <div class="bg-white py-16 md:py-24">
