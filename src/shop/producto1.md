@@ -1,8 +1,8 @@
 ---
-title: Composición Original "Amanecer Sonoro"
+title: Pajarillo
 image: https://images.pexels.com/photos/7086303/pexels-photo-7086303.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2
-description: "Una pieza original para piano y flauta travesera, ideal para conciertos de cámara o estudio. Partitura completa y grabación de referencia."
-price: 75.00
+description: "Una pieza original para trompeta y piano."
+price: 25.00
 category: Composición
 tags: ["products"] 
 layout: product_single 
@@ -10,14 +10,17 @@ permalink: "/shop/{{ title | slug }}/index.html" # <--- Add this line for the UR
 ---
 ## Detalles de la Composición
 
-"Amanecer Sonoro" es una obra lírica en tres movimientos que evoca la tranquilidad de las primeras luces del día. Escrita para un dúo de piano y flauta, combina melodías evocadoras con armonías ricas. Incluye partitura en PDF, archivos MIDI y una grabación de alta calidad.
+"Pajarillo" es una pieza muy virtuosa basada en un ritmo de Joropo tradicional venezolano. 
 
 ### Instrumentación:
 - Piano
-- Flauta Travesera
+- Trompeta
 
 ### Duración:
-Aproximadamente 7 minutos.
+Aproximadamente 4 minutos.
+
+### Enlace de Youtube:
+[Enlace](https://www.youtube.com/watch?app=desktop&v=lQjenzdrQys)
 
 ### Formato de entrega:
 - Partitura en PDF

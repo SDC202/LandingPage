@@ -1,6 +1,6 @@
-import { enviarFormulario, cargarVideos } from './firebase.js';
+import { enviarFormulario } from './firebase.js';
 
-function enableForm() {
+function habilitarFormulario() {
   const form = document.getElementById('formulario_arreglo');
   if (!form) return;
 
@@ -38,12 +38,9 @@ function enableForm() {
     }
     
   });
-  console.log('Formulario habilitado');
+  console.log('Formulario habilitado correctamente!');
 }
 
-
-
 (function() {
-    enableForm();
-    cargarVideos();
+    habilitarFormulario();
 })();

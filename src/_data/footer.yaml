@@ -1,26 +1,14 @@
 ---
-section_one_title: 
+section_one_title: Más información
 section_one_links:
-  - text: 
-    url: "#"
-  - text: 
-    url: "#"
-  - text: 
-    url: "#"
-section_two_title: 
+  - text: Sobre mi
+    url: "/pages/about-us"
+section_two_title: Links útiles
 section_two_links:
-  - text: 
-    url: "#"
-  - text:
-    url: "#"
-  - text: 
-    url: "#"
-section_three_title: 
-section_three_links:
-  - text: 
-    url: "#"
-  - text: 
-    url: "#"
-  - text: 
-    url: "#"
+  - text: Tienda
+    url: "/shop"
+  - text: Solicitar Arreglo
+    url: "/arrangements_request"
+  - text: Canal de Yotube
+    url: "https://www.youtube.com/@eduardomanzanilla7987"
 copyright: ©2021 DESIGN BY NOVOLIO. IMAGES BY UNSPLASH

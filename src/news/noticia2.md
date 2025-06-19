@@ -1,13 +1,13 @@
 ---
-title: Lanzamiento de mi Último Arreglo para Big Band
-date: 2025-06-01
-image:
-description: "Mi nuevo arreglo para big band, 'Swingin' City Lights', ya está disponible para descarga y licencia."
+title: "Orquesta Sinfónica de Guayaquil: Héroes y Villanos"
+date: 2024-06-01
+image: "https://osg.gob.ec/wp-content/uploads/2024/06/HEROES-Y-VILLANOS-CONCIERTO-OSG.jpeg"
+description: "Este concierto es parte de las celebraciones por nuestro 75º aniversario. Siete décadas y media de excelencia musical. “Héroes y Villanos” es uno de los muchos eventos especiales que hemos preparado para celebrar este hito contigo."
 tags: ["news"]
 layout: news_single
 ---
-## Sobre 'Swingin' City Lights'
+## Detalles del Concierto
 
-Este arreglo enérgico y moderno está diseñado para una big band completa, combinando elementos de jazz clásico con toques contemporáneos. Perfecto para orquestas escolares, universitarias o profesionales que busquen un número vibrante.
+Podrás disfrutar de la OSG interpretando estas piezas musicales. La atmósfera evocará la grandeza y emoción de las historias de héroes y villanos, ofreciéndote una experiencia única, tanto visual como auditiva.
 
-Puedes escucharlo y obtener la partitura en la [tienda de arreglos](/shop/).
+Este concierto de entrada gratuita es parte de las celebraciones por nuestro 75º aniversario. Siete décadas y media de excelencia musical. “Héroes y Villanos” es uno de los muchos eventos especiales que hemos preparado para celebrar este hito contigo.

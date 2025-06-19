@@ -13,7 +13,7 @@ layout: default
 		<a href="{{ home.link_two }}" class="border-b border-white">{{ home.link_two_text }}</a>
 	</div>
 
-	<img src="{{ home.image }}" class="w-full h-full absolute inset-0 object-cover opacity-70" />
+	<img src="{{ home.image }}" class="w-full h-full absolute inset-0 object-cover" />
 </div>
 
 <div class="grid grid-cols-1 md:grid-cols-2">
@@ -101,13 +101,11 @@ layout: default
     </div>
 </div>
 
-<!-- {% if home.cta_title %}
-<div class="max-w-xl mx-auto text-center py-24 md:py-32">
-	<div class="w-24 h-2 bg-yellow-800 mb-4 mx-auto"></div>
-	<h2 class="font-display font-bold text-3xl md:text-4xl lg:text-5xl mb-6">{{ home.cta_title }}</h2>
+<div class="max-w-xl mx-auto text-center py-12 md:py-20">
+    <h2 class="font-display font-bold text-3xl md:text-4xl lg:text-5xl mb-6">{{ home.cta_title }}</h2>
+	<div class="w-24 h-2 bg-yellow-800 mb-4 mx-auto"></div>	
 	<p class="font-light text-gray-600 mb-6 leading-relaxed">{{ home.cta_description }}</p>
 </div>
-{% endif %} -->
 
 <div class="flex flex-wrap bg-black">
 	{% for category in collections.category | reverse | limit(3) %}
@@ -118,7 +116,6 @@ layout: default
 	{% endfor %}
 </div>
 
-{% if home.youtube_videos and home.youtube_videos.length > 0 %}
     <div class="bg-gray-100 py-16 md:py-24">
         <div class="container mx-auto px-4 text-center mb-12">
             <h2 class="font-display font-bold text-4xl lg:text-5xl text-gray-800 mb-4">Mi Canal de YouTube</h2>
@@ -139,7 +136,6 @@ layout: default
             </a>
         </div>
     </div>
-{% endif %}
 
 <!-- {% for post in collections.blogs | reverse | limit(1, 1) %}
 	<div class="grid grid-cols-1 md:grid-cols-2">
@@ -211,3 +207,7 @@ layout: default
     </div>
 {% endif %}
 
+{% block scripts %}
+  <script src="/js/firebase.js" type="module"></script>
+  <script src="/js/videos.js" type="module"></script>
+{% endblock %}

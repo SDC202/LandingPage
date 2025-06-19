@@ -6,58 +6,20 @@ link_one: /pages/about-us
 link_one_text: Sobre mí
 link_two: /contact
 link_two_text: Contáctate conmigo
-profile_image: "/static/images/tu-foto.jpg" # Reemplaza con la ruta a tu foto
+profile_image: "/static/img/fpf.jpg" # Reemplaza con la ruta a tu foto
 professional_experience:
-  - "He trabajado con orquestas de renombre internacional."
-  - "Mis arreglos han sido interpretados en importantes salas de concierto."
-  - "Cuento con más de 10 años de experiencia como compositor."
-  - "He recibido premios por mi trabajo en la música."
-full_screen_image: https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  - "1er premio en el Conservatorio Nacional de región de Niza, Francia."
+  - "1er trompeta en la Orchestre du Capitol de Toulouse, Francia."
+  - "Primer trompeta en la Orquesta Sinfónica Municipal de Caracas."
+  - "Grabación de 3 discos como solista."
+full_screen_image: "/static/img/foto_fondo_negro.jpg"
+
+cta_title: "Tienda"
+cta_description: "Puedes solicitar una de mis piezas originales o puedes contactarme para un arreglo."
 
 footer_cta_title: ¿Necesitas una composición musical original?
 footer_cta_description: Contáctame y juntos crearemos una pieza única que se adapte a tus necesidades.
 footer_cta_button_text: Contáctame
 footer_cta_button_link: /contact
-footer_cta_image: https://images.unsplash.com/photo-1597047215612-4523973fbac2?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 
-
-youtube_videos:
-  - title: Saxofón Alto y Piano | Arreglo de balada Jazz
-    description: Una emotiva balada jazz arreglada para saxofón alto y piano, con una improvisación conmovedora.
-    youtube_id: K9QhWBUtDiw
-  - title: Trompeta | El Cielito - Solo
-    description: Interpretación vibrante del clásico El Cielito en trompeta, mostrando la riqueza de la melodía.
-    youtube_id: 2jIKymSItHI
-  - title: Trompeta | O sole mio
-    description: Una adaptación clásica del famoso 'O sole mio' para trompeta, resaltando su brillo y expresividad.
-    youtube_id: yVb-xP3tdFg
-  - title: Trompeta | Oh Holy Night - Solo
-    description: Solo de trompeta para la conmovedora melodía de 'Oh Holy Night', ideal para temporada navideña.
-    youtube_id: XqgEXvVs9Nk
-  - title: Clarinete | Las mañanitas - Solo
-    description: Versión solista de 'Las Mañanitas' para clarinete, perfecta para celebraciones.
-    youtube_id: LKfh74X9Bk8
-  - title: Clarinete | Tema de amor el padrino
-    description: Una adaptación íntima del tema de amor de El Padrino para clarinete, ideal para momentos especiales.
-    youtube_id: Uv9yidGiuvE
-  - title: Trompeta | El Cielito
-    description: Versión completa de El Cielito con trompeta, capturando la alegría y el espíritu festivo.
-    youtube_id: vAZYhdPEdj0
-  - title: Saxofón Alto y Piano | All of me
-    description: Un arreglo dinámico de 'All of Me' para saxofón alto y piano, ideal para un ambiente de jazz.
-    youtube_id: b95WXOREo1I
-  - title: Arreglo de Piano y Saxofón | Misty
-    description: La clásica balada de jazz 'Misty' en un arreglo sofisticado para piano y saxofón, con improvisación.
-    youtube_id: ahMB12epca4
-  - title: Arreglo de Piano | O sole mio
-    description: Una interpretación elegante y conmovedora de 'O sole mio' para piano solo, con un toque clásico.
-    youtube_id: pSXKuMfMZwA
-  - title: Saxofón Alto y Piano | Blue Bossa
-    description: Un arreglo enérgico y rítmico de 'Blue Bossa' para saxofón alto y piano, ideal para estudio o performance.
-    youtube_id: uwO9Zki35Xs
-  - title: Violín | Mi Viejo San Juan
-    description: Una hermosa adaptación de 'Mi Viejo San Juan' para violín, rindiendo homenaje a la nostalgia caribeña.
-    youtube_id: kBzGgZxvQ6E
-  - title: Violín y Piano | Arreglo de 'Por una Cabeza'
-    description: El apasionado tango 'Por una Cabeza' arreglado para violín y piano, ideal para conciertos.
-    youtube_id: 8ddJ6xAKt6U
+footer_cta_image: https://images.unsplash.com/photo-1648461513577-8521ecdf50c5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D

@@ -2,9 +2,8 @@
 title: ¿Quién soy?
 description: null
 ---
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Soy un músico; trompetista, compositor, arreglista y profesor venezolano.
+Me he dedicado a la música por más de 50 años y he sido parte de orquestas importantes alrededor del mundo y conseguido reconocimientos en institutos prestigiosos.
+Tengo una pasión enorme por enseñar, en universidades o de manera particular.
+Si me preguntan sobre mi música favorita, mi respuesta inmediata será ¡la música brasileña! Viví algunos años en Río de Janeiro y me enamoré de su cultura y su música.
+Estoy completamente dispuesto y feliz a hacer realidad la imaginación de mis clientes mediante arreglos y composiciones originales!
