@@ -6,16 +6,14 @@ link_one: /pages/about-us
 link_one_text: Sobre mí
 link_two: /contact
 link_two_text: Contáctate conmigo
-profile_image: "/static/img/fpf.jpg" # Reemplaza con la ruta a tu foto
+profile_image: "/static/img/fpf.jpg"
 professional_experience:
   - "1er premio en el Conservatorio Nacional de región de Niza, Francia."
   - "1er trompeta en la Orchestre du Capitol de Toulouse, Francia."
   - "Primer trompeta en la Orquesta Sinfónica Municipal de Caracas."
   - "Grabación de 3 discos como solista."
 
-cta_title: "Tienda"
-cta_description: "Puedes solicitar una de mis piezas originales o puedes contactarme para un arreglo."
-
+full_screen_image: "/static/img/Brass.jpeg"
 footer_cta_title: ¿Necesitas una composición musical original?
 footer_cta_description: Contáctame y juntos crearemos una pieza única que se adapte a tus necesidades.
 footer_cta_button_text: Contáctame

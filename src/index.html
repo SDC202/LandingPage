@@ -28,7 +28,6 @@ layout: default
         <div class="max-w-md">
             <div class="w-24 h-2 bg-yellow-800 mb-4"></div>
             <h2 class="font-display font-bold text-2xl md:text-3xl lg:text-4xl mb-6">Mi Experiencia Profesional</h2>
-            {# This title is hardcoded here, can be moved to data if desired #}
             <ul class="list-disc pl-5 font-light text-gray-600 text-sm md:text-base mb-6 leading-relaxed">
                 {% for item in home.professional_experience %}
                     <li class="mb-2">{{ item }}</li>
@@ -38,6 +37,10 @@ layout: default
         </div>
     </div>
 </div>
+
+{% if home.full_screen_image %}
+<img src="{{ home.full_screen_image }}" class="w-full h-96 object-cover" />
+{% endif %}
 
 <div class="bg-white py-16 md:py-24">
     <div class="container mx-auto px-4 text-center mb-12">
@@ -76,11 +79,6 @@ layout: default
     </div>
 </div>
 
-<div class="max-w-xl mx-auto text-center py-12 md:py-20">
-    <h2 class="font-display font-bold text-3xl md:text-4xl lg:text-5xl mb-6">{{ home.cta_title }}</h2>
-	<div class="w-24 h-2 bg-yellow-800 mb-4 mx-auto"></div>	
-	<p class="font-light text-gray-600 mb-6 leading-relaxed">{{ home.cta_description }}</p>
-</div>
 
 <div class="flex flex-wrap bg-black">
 	{% for category in collections.category | reverse | limit(3) %}
